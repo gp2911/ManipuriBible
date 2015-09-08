@@ -17,5 +17,6 @@
     <string name="action_example">Example action</string>
     <string name="title_activity_old_t">OldT</string>
 
-    <string name="json_file">res/raw/verses.json</string>
+    <string name="basepath">resources</string>
+    <string name="app_basedir">manipuri_bible</string>
 </resources>

@@ -5,10 +5,15 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.garamtech.manipuribible.R;
+
+import java.util.ArrayList;
 
 
 public class BooksActivity extends AppCompatActivity {
@@ -20,6 +25,7 @@ public class BooksActivity extends AppCompatActivity {
     ViewPagerAdapter adapter;
     SlidingTabLayout tabs;
     CharSequence Titles[]={"Kitepna Lui","Kitepna Thah"};
+    private static String tag = "BooksActivity";
     int Numboftabs =2;
 
     @Override
@@ -55,8 +61,6 @@ public class BooksActivity extends AppCompatActivity {
 
         // Setting the ViewPager For the SlidingTabsLayout
         tabs.setViewPager(pager);
-
-
 
     }
 

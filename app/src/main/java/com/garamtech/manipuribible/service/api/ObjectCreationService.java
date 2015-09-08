@@ -2,6 +2,7 @@ package com.garamtech.manipuribible.service.api;
 
 import com.garamtech.manipuribible.model.Book;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -13,5 +14,5 @@ public interface ObjectCreationService {
      * Generates list of books by reading verses.json
      * @return List containing all books
      */
-    public List<Book> generateBookList();
+    public List<Book> generateBookList(File file);
 }

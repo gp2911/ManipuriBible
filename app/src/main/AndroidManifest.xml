@@ -23,7 +23,9 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activity.MainActivity" />
-        </activity>
+        </activity> 
     </application>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 </manifest>
