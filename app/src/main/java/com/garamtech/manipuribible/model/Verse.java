@@ -14,7 +14,7 @@ public class Verse {
     private int num;
 
     //text of the verse
-    private int text;
+    private String text;
 
     /**
      * Getters and Setters
@@ -28,11 +28,11 @@ public class Verse {
         this.num = num;
     }
 
-    public int getText() {
+    public String getText() {
         return text;
     }
 
-    public void setText(int text) {
+    public void setText(String text) {
         this.text = text;
     }
 

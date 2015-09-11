@@ -3,6 +3,7 @@ package com.garamtech.manipuribible.service.api;
 import com.garamtech.manipuribible.model.Book;
 
 import java.io.File;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
@@ -15,4 +16,6 @@ public interface ObjectCreationService {
      * @return List containing all books
      */
     public List<Book> generateBookList(File file);
+
+    public Book convertToBook(LinkedHashMap map);
 }

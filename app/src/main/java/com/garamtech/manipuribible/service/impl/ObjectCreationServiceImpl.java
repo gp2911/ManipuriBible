@@ -2,6 +2,7 @@ package com.garamtech.manipuribible.service.impl;
 
 import android.util.Log;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.garamtech.manipuribible.model.Book;
 import com.garamtech.manipuribible.service.api.ObjectCreationService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -9,6 +10,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
@@ -18,14 +20,19 @@ import java.util.List;
 public class ObjectCreationServiceImpl implements ObjectCreationService {
 
     private static String tag = "OCS";
+    ObjectMapper mapper = new ObjectMapper();
 
     @Override
     public List<Book> generateBookList(File file) {
         List<Book> bookList = new ArrayList<>();
-        ObjectMapper mapper = new ObjectMapper();
+
 
         try {
-            bookList = mapper.readValue(file, List.class);
+            List list = mapper.readValue(file, List.class);
+            for(Object object : list){
+                Log.i(tag, ((LinkedHashMap) object).toString());
+                bookList.add(mapper.convertValue(object, Book.class));
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -36,5 +43,10 @@ public class ObjectCreationServiceImpl implements ObjectCreationService {
             return bookList;
         else
             return null;
+    }
+
+    @Override
+    public Book convertToBook(LinkedHashMap map) {
+        return mapper.convertValue(map, Book.class);
     }
 }
