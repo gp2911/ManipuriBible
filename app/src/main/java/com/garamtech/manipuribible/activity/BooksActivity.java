@@ -8,10 +8,12 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.garamtech.manipuribible.R;
+import com.garamtech.manipuribible.global.listener.BookTitleClickListener;
 
 import java.util.ArrayList;
 
@@ -85,5 +87,16 @@ public class BooksActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    @Override
+    public void onBackPressed() {
+
+
+        BookTitleClickListener.onBack(this);
+
+    }
+
+    public void defBackPress(){
+        super.onBackPressed();
     }
 }
